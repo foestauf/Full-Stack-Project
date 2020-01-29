@@ -20,8 +20,8 @@ router.get('/:date', (req, res, next) => {
     console.log(date);
     if (date.isValid()) {
         dateObj = {
-            unix: Number(date.format('X')),
-            utc: date.utc().format("dddd, DD MMM YYYY HH:mm:ss z")
+            unix: Number(date.format('x')),
+            utc: date.utc().format.toJSON()("dddd, DD MMM YYYY HH:mm:ss z")
         };
 
     } else {
