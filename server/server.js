@@ -8,7 +8,6 @@ const apiRouter = require('./routes/api')
 app.use(morgan('combined'));
 app.use(cors());
 
-var cors = require('cors');
 app.use(cors({optionSuccessStatus: 200}));  // some legacy browsers choke on 204
 
 
