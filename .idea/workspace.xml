@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="33965d12-83f5-4c8e-a02c-02885aa6db0c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/server/routes/api.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/routes/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/api.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,18 +66,34 @@
       <workItem from="1579988231605" duration="6616000" />
       <workItem from="1580058062288" duration="126000" />
       <workItem from="1580058202304" duration="6950000" />
-      <workItem from="1580262295743" duration="4310000" />
+      <workItem from="1580262295743" duration="5811000" />
     </task>
+    <task id="LOCAL-00001" summary="TimeStamp api complete.">
+      <created>1580266649214</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1580266649215</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="TimeStamp api complete." />
+    <option name="LAST_COMMIT_MESSAGE" value="TimeStamp api complete." />
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="179" key="#Notifications" timestamp="1579988294878">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="179" key="#Notifications/0.0.1920.1040/1920.-446.1080.1880@0.0.1920.1040" timestamp="1579988294878" />
+    <state x="583" y="29" key="CommitChangelistDialog2" timestamp="1580266648509">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="583" y="29" key="CommitChangelistDialog2/0.0.1920.1040/1920.-446.1080.1880@0.0.1920.1040" timestamp="1580266648509" />
     <state width="1899" height="261" key="GridCell.Tab.0.bottom" timestamp="1579998857797">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -104,5 +114,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="163" key="SettingsEditor/0.0.1920.1040/1920.-446.1080.1880@0.0.1920.1040" timestamp="1580058091882" />
+    <state x="552" y="250" key="Vcs.Push.Dialog.v2" timestamp="1580266678107">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="250" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.-446.1080.1880@0.0.1920.1040" timestamp="1580266678107" />
   </component>
 </project>

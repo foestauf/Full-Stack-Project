@@ -21,7 +21,7 @@ router.get('/:date', (req, res, next) => {
     if (date.isValid()) {
         dateObj = {
             unix: Number(date.format('X')),
-            natural: date.format('MMMM D, YYYY')
+            utc: date.utc().format("dddd, DD MMM YYYY HH:mm:ss z")
         };
 
     } else {
@@ -40,3 +40,5 @@ router.get('/', (req, res, next) => {
 });
 
 module.exports = router;
+
+// Sun, 20 Nov 2016 17:31:29 GMT
