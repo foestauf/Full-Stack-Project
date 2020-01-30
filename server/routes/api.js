@@ -3,7 +3,6 @@ const moment = require('moment');
 const router = express.Router();
 
 const formats = [
-    'X',
     'x',
     'MMMM D, YYYY',
     'MMMM D YYYY',
