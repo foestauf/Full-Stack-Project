@@ -18,7 +18,6 @@ let dateObj;
 router.get('/:date', (req, res, next) => {
     const data = req.params.date;
     const date = moment(data, formats);
-    console.log(data);
     if (date.isValid()) {
         dateObj = {
             unix: new Date(date).getTime(),
