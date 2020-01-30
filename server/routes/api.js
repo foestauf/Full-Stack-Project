@@ -4,6 +4,7 @@ const router = express.Router();
 
 const formats = [
     'X',
+    'x',
     'MMMM D, YYYY',
     'MMMM D YYYY',
     'MMM D, YYYY',
@@ -17,11 +18,11 @@ let dateObj;
 router.get('/:date', (req, res, next) => {
     const data = req.params.date;
     const date = moment(data, formats);
-    console.log(date);
+    console.log(data);
     if (date.isValid()) {
         dateObj = {
-            unix: Number(date.format('x')),
-            utc: date.utc().format.toJSON()("dddd, DD MMM YYYY HH:mm:ss z")
+            unix: new Date(date).getTime(),
+            utc: new Date(date).toUTCString()
         };
 
     } else {
