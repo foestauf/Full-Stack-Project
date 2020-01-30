@@ -39,5 +39,3 @@ router.get('/', (req, res, next) => {
 });
 
 module.exports = router;
-
-// Sun, 20 Nov 2016 17:31:29 GMT
