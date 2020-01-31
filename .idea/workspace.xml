@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="33965d12-83f5-4c8e-a02c-02885aa6db0c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/server/routes/tinyurl.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/server.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,7 +71,8 @@
       <workItem from="1580058202304" duration="6950000" />
       <workItem from="1580262295743" duration="8590000" />
       <workItem from="1580315761732" duration="1313000" />
-      <workItem from="1580350812980" duration="4372000" />
+      <workItem from="1580350812980" duration="4559000" />
+      <workItem from="1580434456481" duration="5999000" />
     </task>
     <task id="LOCAL-00001" summary="TimeStamp api complete.">
       <created>1580266649214</created>
@@ -118,7 +123,14 @@
       <option name="project" value="LOCAL" />
       <updated>1580354865572</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Completed header parser.">
+      <created>1580355624971</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1580355624971</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -130,17 +142,18 @@
     <MESSAGE value="Derp" />
     <MESSAGE value="Switched to native JS date formatting. Using method only to parse input string." />
     <MESSAGE value="Adding header parser" />
-    <option name="LAST_COMMIT_MESSAGE" value="Adding header parser" />
+    <MESSAGE value="Completed header parser." />
+    <option name="LAST_COMMIT_MESSAGE" value="Completed header parser." />
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="179" key="#Notifications" timestamp="1579988294878">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="179" key="#Notifications/0.0.1920.1040/1920.-446.1080.1880@0.0.1920.1040" timestamp="1579988294878" />
-    <state x="583" y="29" key="CommitChangelistDialog2" timestamp="1580354864938">
+    <state x="583" y="29" key="CommitChangelistDialog2" timestamp="1580355624403">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="583" y="29" key="CommitChangelistDialog2/0.0.1920.1040/1920.-446.1080.1880@0.0.1920.1040" timestamp="1580354864938" />
+    <state x="583" y="29" key="CommitChangelistDialog2/0.0.1920.1040/1920.-446.1080.1880@0.0.1920.1040" timestamp="1580355624403" />
     <state width="1899" height="261" key="GridCell.Tab.0.bottom" timestamp="1579998857797">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -161,9 +174,13 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="163" key="SettingsEditor/0.0.1920.1040/1920.-446.1080.1880@0.0.1920.1040" timestamp="1580058091882" />
-    <state x="552" y="250" key="Vcs.Push.Dialog.v2" timestamp="1580354869348">
+    <state x="552" y="250" key="Vcs.Push.Dialog.v2" timestamp="1580355628024">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="250" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.-446.1080.1880@0.0.1920.1040" timestamp="1580354869348" />
+    <state x="552" y="250" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.-446.1080.1880@0.0.1920.1040" timestamp="1580355628024" />
+    <state x="1920" y="-419" width="1096" height="1020" maximized="true" key="dock-window-1" timestamp="1580434978808">
+      <screen x="1920" y="-446" width="1080" height="1880" />
+    </state>
+    <state x="1920" y="-419" width="1096" height="1020" maximized="true" key="dock-window-1/0.0.1920.1040/1920.-446.1080.1880@0.0.1920.1040" timestamp="1580434978808" />
   </component>
 </project>
