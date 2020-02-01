@@ -1,31 +1,34 @@
-require('dotenv').config();
 const mongoose = require('mongoose');
-mongoose.connect(process.env.MONGO_URI, {useNewUrlParser: true, useUnifiedTopology: true});
 const Schema = mongoose.Schema;
 const urlSchema = new Schema({
     fullUrl: {type: String, required: true},
-    shortUrl: {type: String, required: true},
-    dateCreated: Number,
-    lastUsedDate: Number
+    shortUrl: {type: String, required: true, unique: true},
+    dateCreated: {type: Number, default: Date.now},
+    lastUsedDate: {type: Number, default: Date.now}
 });
+
 const Url = mongoose.model("Url", urlSchema);
 
-function createAndSaveUrl(param1, param2, param3, param4) {
-    const Url = new Url({
+/* function createAndSaveUrl(param1, param2) {
+    const url = new Url({
         fullUrl: param1,
         shortUrl: param2,
-        dateCreated: param3,
-        lastUsedDate: param4
-    })
-    Url.save((err, data) => {
+        dateCreated: Date.now,
+        lastUsedDate: Date.now
+    });
+    url.save((err, data) => {
         if (err) return done(err)
         return done(null, data)
     })
 };
+*/
 
-function findUrl(param1) {
+/*function findUrl(param1) {
     Url.find({url: param1}, (err, data) => {
         if (err) return console.log(err);
         done(null, urlFound);
     });
 };
+*/
+module.exports = mongoose.model('Url', urlSchema);
+// module.exports = createAndSaveUrl();

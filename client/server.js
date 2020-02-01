@@ -1,9 +1,10 @@
-var express = require("express");
-var morgan = require("morgan");
-var compression = require('compression');
-var helmet = require('helmet');
+const express = require("express");
+const morgan = require("morgan");
+const compression = require('compression');
+const helmet = require('helmet');
 
-var app = express();
+const app = express();
+
 app.use(helmet());
 app.use(compression()); 
 
