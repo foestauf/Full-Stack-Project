@@ -2,11 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="33965d12-83f5-4c8e-a02c-02885aa6db0c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/server/routes/tinyurl.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/.env" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/.env_sample" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/components/dbhandler.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/routes/tinyurl.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/tinyurl.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,7 +74,8 @@
       <workItem from="1580262295743" duration="8590000" />
       <workItem from="1580315761732" duration="1313000" />
       <workItem from="1580350812980" duration="4559000" />
-      <workItem from="1580434456481" duration="5999000" />
+      <workItem from="1580434456481" duration="6188000" />
+      <workItem from="1580524169936" duration="4015000" />
     </task>
     <task id="LOCAL-00001" summary="TimeStamp api complete.">
       <created>1580266649214</created>
@@ -130,11 +133,31 @@
       <option name="project" value="LOCAL" />
       <updated>1580355624971</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Start of shortURL api.">
+      <created>1580440531913</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1580440531913</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="TimeStamp api complete." />
@@ -143,17 +166,22 @@
     <MESSAGE value="Switched to native JS date formatting. Using method only to parse input string." />
     <MESSAGE value="Adding header parser" />
     <MESSAGE value="Completed header parser." />
-    <option name="LAST_COMMIT_MESSAGE" value="Completed header parser." />
+    <MESSAGE value="Start of shortURL api." />
+    <option name="LAST_COMMIT_MESSAGE" value="Start of shortURL api." />
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="179" key="#Notifications" timestamp="1579988294878">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="179" key="#Notifications/0.0.1920.1040/1920.-446.1080.1880@0.0.1920.1040" timestamp="1579988294878" />
-    <state x="583" y="29" key="CommitChangelistDialog2" timestamp="1580355624403">
+    <state x="712" y="311" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1580526291483">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="583" y="29" key="CommitChangelistDialog2/0.0.1920.1040/1920.-446.1080.1880@0.0.1920.1040" timestamp="1580355624403" />
+    <state x="712" y="311" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040/1920.-446.1080.1880@0.0.1920.1040" timestamp="1580526291483" />
+    <state x="583" y="29" key="CommitChangelistDialog2" timestamp="1580440531195">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="583" y="29" key="CommitChangelistDialog2/0.0.1920.1040/1920.-446.1080.1880@0.0.1920.1040" timestamp="1580440531195" />
     <state width="1899" height="261" key="GridCell.Tab.0.bottom" timestamp="1579998857797">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -174,13 +202,13 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="163" key="SettingsEditor/0.0.1920.1040/1920.-446.1080.1880@0.0.1920.1040" timestamp="1580058091882" />
-    <state x="552" y="250" key="Vcs.Push.Dialog.v2" timestamp="1580355628024">
+    <state x="552" y="250" key="Vcs.Push.Dialog.v2" timestamp="1580440600837">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="250" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.-446.1080.1880@0.0.1920.1040" timestamp="1580355628024" />
-    <state x="1920" y="-419" width="1096" height="1020" maximized="true" key="dock-window-1" timestamp="1580434978808">
+    <state x="552" y="250" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.-446.1080.1880@0.0.1920.1040" timestamp="1580440600837" />
+    <state x="1920" y="-446" width="1096" height="1020" maximized="true" key="dock-window-1" timestamp="1580526420083">
       <screen x="1920" y="-446" width="1080" height="1880" />
     </state>
-    <state x="1920" y="-419" width="1096" height="1020" maximized="true" key="dock-window-1/0.0.1920.1040/1920.-446.1080.1880@0.0.1920.1040" timestamp="1580434978808" />
+    <state x="1920" y="-446" width="1096" height="1020" maximized="true" key="dock-window-1/0.0.1920.1040/1920.-446.1080.1880@0.0.1920.1040" timestamp="1580526420083" />
   </component>
 </project>
