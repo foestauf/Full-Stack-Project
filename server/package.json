@@ -10,6 +10,7 @@
     "express": "^4.16.4",
     "helmet": "^3.21.2",
     "moment": "^2.24.0",
+    "mongodb": "^3.5.2",
     "mongoose": "^5.8.10",
     "morgan": "^1.9.1",
     "react": "^16.6.3",
@@ -17,10 +18,10 @@
     "react-scripts": "^3.3.0"
   },
   "scripts": {
-    "start": "/react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "npm react-scripts start",
+    "build": "npm react-scripts build",
+    "test": "npm react-scripts test",
+    "eject": "npm react-scripts eject"
   },
   "eslintConfig": {
     "extends": "react-app"

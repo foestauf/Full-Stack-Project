@@ -3,20 +3,54 @@ const router = express.Router();
 const dns = require('dns');
 require('dotenv').config();
 const mongoose = require('mongoose');
-const database = mongoose.connect(process.env.MONGO_URI, {useNewUrlParser: true, useUnifiedTopology: true});
-const db = require('./../components/dbhandler');
-let url;
+mongoose.connect(process.env.MONGO_URI, {useNewUrlParser: true, useUnifiedTopology: true});
+const db = mongoose.connection;
+const urlDB = require('./../components/dbhandler');
+let fullUrl;
+
+const Schema = mongoose.Schema;
+const urlSchema = new Schema({
+    fullUrl: {type: String, required: true, unqieu: true},
+    shortUrl: {type: String, required: true, unique: true},
+    dateCreated: {type: Number, default: Date.now},
+    lastUsedDate: {type: Number, default: Date.now}
+});
+
+const Url = mongoose.model("Url", urlSchema);
+
+function makeid(length) {
+    var result           = '';
+    var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    var charactersLength = characters.length;
+    for ( var i = 0; i < length; i++ ) {
+        result += characters.charAt(Math.floor(Math.random() * charactersLength));
+    }
+    return result;
+}
+
+console.log(makeid(5));
 
 
-
-router.post('/new/:newUrl(*)', (req, res, next) => {
-    url = req.params.newUrl;
-    console.log(url);
-    if (validURL(url)) {
+router.get('/new/:newUrl(*)', (req, res) => {
+    fullUrl = req.params.newUrl;
+    console.log(fullUrl);
+    let short_url = makeid(5);
+    if (validURL(fullUrl)) {
         console.log('Valid URL received');
-        if (dnsCheck(url)) {
-            createAndSaveUrl(url, 1);
-            console.log('DNS confirmed')
+        if (!dnsCheck(fullUrl)) {
+            db.on('error', console.error.bind(console, "connection error:"));
+            console.log('DNS confirmed');
+            var createUrl = function(done) {
+                var url = new Url({
+                    fullUrl: fullUrl,
+                    shortUrl: short_url
+                });
+                console.log('ready to save to DB');
+                url.save((err, data) => {
+                    if (err) return console.log(err);
+                })
+            };
+            createUrl();
         } else {
             console.log('BAD DNS, do something!');
         }
@@ -27,8 +61,8 @@ router.post('/new/:newUrl(*)', (req, res, next) => {
         })
     }
     res.json({
-        hello: "We got it",
-        url: url
+        original_url: fullUrl,
+        short_url: short_url
     })
 });
 

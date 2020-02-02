@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+/* const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 const urlSchema = new Schema({
     fullUrl: {type: String, required: true},
@@ -29,6 +29,8 @@ const Url = mongoose.model("Url", urlSchema);
         done(null, urlFound);
     });
 };
-*/
+
 module.exports = mongoose.model('Url', urlSchema);
+module.exports = Url;
 // module.exports = createAndSaveUrl();
+*/
