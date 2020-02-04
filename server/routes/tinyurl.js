@@ -1,9 +1,14 @@
 const express = require('express');
 const router = express.Router();
 const dns = require('dns');
+const mongoOptions = {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true
+}
 require('dotenv').config();
 const mongoose = require('mongoose');
-mongoose.connect(process.env.MONGO_URI, {useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect(process.env.MONGO_URI, mongoOptions);
 const db = mongoose.connection;
 const urlDB = require('./../components/dbhandler');
 let fullUrl;
@@ -31,7 +36,7 @@ function makeid(length) {
 console.log(makeid(5));
 
 
-router.get('/new/:newUrl(*)', (req, res) => {
+router.post('/new/:newUrl(*)', (req, res) => {
     fullUrl = req.params.newUrl;
     console.log(fullUrl);
     let short_url = makeid(5);
@@ -40,7 +45,7 @@ router.get('/new/:newUrl(*)', (req, res) => {
         if (!dnsCheck(fullUrl)) {
             db.on('error', console.error.bind(console, "connection error:"));
             console.log('DNS confirmed');
-            var createUrl = function(done) {
+            var createUrl = function() {
                 var url = new Url({
                     fullUrl: fullUrl,
                     shortUrl: short_url
@@ -62,17 +67,31 @@ router.get('/new/:newUrl(*)', (req, res) => {
     }
     res.json({
         original_url: fullUrl,
-        short_url: short_url
+        short_url: 'http://3.210.231.52/api/shorturl/' + short_url
     })
 });
 
-router.get('/:shortUrl', (req, res) => {
-    let urlSearch = {
-        shortUrl: encodeURI(req.params.shortUrl)
-    }
-    console.log(urlSearch);
-
-})
+router.get('/:shortUrl(*)', (req, res) => {
+    console.log(req.params.shortUrl);
+    let urlSearch = req.params.shortUrl;
+    var query = function(personName, done) {
+        db.on('error', console.error.bind(console, "connection error:"));
+        Url.findOne({shortUrl: urlSearch}, function (err, docs) {
+            console.log('Inside DB FIND callback');
+            console.log('Searching for ' + urlSearch);
+            console.log(docs);
+            if (err) return console.log(err);
+            if(docs != null) {
+                // db.close();
+                res.redirect(docs.fullUrl);
+            } else {
+                 // db.close();
+                res.end('Can\'t find URL');
+            }
+        });
+    };
+     query();
+});
 
 function validURL(str) {
     let pattern = new RegExp('^(https?:\\/\\/)?'+ // protocol
