@@ -11,8 +11,6 @@ const mongoose = require('mongoose');
 mongoose.connect(process.env.MONGO_URI, mongoOptions);
 const db = mongoose.connection;
 const urlDB = require('./../components/dbhandler');
-let fullUrl;
-
 const Schema = mongoose.Schema;
 const urlSchema = new Schema({
     fullUrl: {type: String, required: true, unqieu: true},
@@ -20,20 +18,19 @@ const urlSchema = new Schema({
     dateCreated: {type: Number, default: Date.now},
     lastUsedDate: {type: Number, default: Date.now}
 });
-
 const Url = mongoose.model("Url", urlSchema);
 
+let fullUrl;
+
 function makeid(length) {
-    var result           = '';
-    var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-    var charactersLength = characters.length;
+    let result           = '';
+    let characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    let charactersLength = characters.length;
     for ( var i = 0; i < length; i++ ) {
         result += characters.charAt(Math.floor(Math.random() * charactersLength));
     }
     return result;
 }
-
-console.log(makeid(5));
 
 
 router.post('/new/:newUrl(*)', (req, res) => {
@@ -43,7 +40,9 @@ router.post('/new/:newUrl(*)', (req, res) => {
     if (validURL(fullUrl)) {
         console.log('Valid URL received');
         if (!dnsCheck(fullUrl)) {
-            db.on('error', console.error.bind(console, "connection error:"));
+            if (!urlFinder(fullUrl)) {
+                console.log('We did it URL does not exist');
+            }
             console.log('DNS confirmed');
             var createUrl = function() {
                 var url = new Url({
@@ -75,17 +74,14 @@ router.get('/:shortUrl(*)', (req, res) => {
     console.log(req.params.shortUrl);
     let urlSearch = req.params.shortUrl;
     var query = function(personName, done) {
-        db.on('error', console.error.bind(console, "connection error:"));
         Url.findOne({shortUrl: urlSearch}, function (err, docs) {
             console.log('Inside DB FIND callback');
             console.log('Searching for ' + urlSearch);
             console.log(docs);
             if (err) return console.log(err);
             if(docs != null) {
-                // db.close();
                 res.redirect(docs.fullUrl);
             } else {
-                 // db.close();
                 res.end('Can\'t find URL');
             }
         });
@@ -120,6 +116,21 @@ function dnsCheck(param) {
         });
         return true;
     });
+}
+
+async function urlFinder(param1) {
+    let promise = Url.findOne({fullUrl: param1}, (err, docs) => {
+        console.log('Searching for shortUrl: ' + param1);
+        console.log(docs);
+        if (err) return console.log(err);
+        let result = await promise;
+        if (result = null) {
+            return false;
+        } else {
+            return true;
+        }
+    })
+
 }
 
 function extractHostname(url) {
