@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import logo from './logo.svg';
 import './App.css';
+import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom';
 
 class App extends Component {
   state = {
@@ -18,16 +19,24 @@ class App extends Component {
   }
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>Server is saying:</p>
-          <p>
-            {this.state.data}
-          </p>
+        <Router>
+      <nav>
+        <ul>
+          <li>
+            <Link to="/" exact>Home</Link>
+          </li>
+          <li>
+            <Link to="/about">About</Link>
+          </li>
+          <li>
+            <Link to="/api">API</Link>
+          </li>
+        </ul>
+      </nav>
           
-        </header>
-      </div>
+
+
+    </Router>
     );
   }
 }

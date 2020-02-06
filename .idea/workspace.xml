@@ -2,7 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="33965d12-83f5-4c8e-a02c-02885aa6db0c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/client/src/home.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/client/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/routes/tinyurl.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/tinyurl.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -33,7 +38,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="settings.editor.selected.configurable" value="editing.templates" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -80,8 +85,13 @@
       <workItem from="1580683604729" duration="691000" />
       <workItem from="1580777343327" duration="154000" />
       <workItem from="1580777530253" duration="6163000" />
-      <workItem from="1580783911148" duration="470000" />
-      <workItem from="1580936739654" duration="2558000" />
+      <workItem from="1580783911148" duration="4179000" />
+      <workItem from="1580869501651" duration="2029000" />
+      <workItem from="1580911708880" duration="412000" />
+      <workItem from="1580912182575" duration="91000" />
+      <workItem from="1580912347226" duration="606000" />
+      <workItem from="1580947156988" duration="90000" />
+      <workItem from="1580959724292" duration="2122000" />
     </task>
     <task id="LOCAL-00001" summary="TimeStamp api complete.">
       <created>1580266649214</created>
@@ -174,7 +184,14 @@
       <option name="project" value="LOCAL" />
       <updated>1580670532864</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="url shortner works, mostly.">
+      <created>1580784671074</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1580784671074</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -203,7 +220,8 @@
     <MESSAGE value="Start of shortURL api." />
     <MESSAGE value="Starting MongoDB work." />
     <MESSAGE value="MongoDB working, kinda..." />
-    <option name="LAST_COMMIT_MESSAGE" value="MongoDB working, kinda..." />
+    <MESSAGE value="url shortner works, mostly." />
+    <option name="LAST_COMMIT_MESSAGE" value="url shortner works, mostly." />
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="179" key="#Notifications" timestamp="1579988294878">
@@ -218,14 +236,18 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="640" y="257" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1920.1040/1920.-446.1080.1880@0.0.1920.1040" timestamp="1580777491875" />
-    <state x="583" y="29" key="CommitChangelistDialog2" timestamp="1580670532229">
+    <state x="583" y="29" key="CommitChangelistDialog2" timestamp="1580784670456">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="583" y="29" key="CommitChangelistDialog2/0.0.1920.1040/1920.-446.1080.1880@0.0.1920.1040" timestamp="1580670532229" />
-    <state x="184" y="92" key="DiffContextDialog" timestamp="1580528412487">
+    <state x="583" y="29" key="CommitChangelistDialog2/0.0.1920.1040/1920.-446.1080.1880@0.0.1920.1040" timestamp="1580784670456" />
+    <state x="184" y="92" width="1536" height="858" key="DiffContextDialog" timestamp="1580947246742">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="184" y="92" key="DiffContextDialog/0.0.1920.1040/1920.-446.1080.1880@0.0.1920.1040" timestamp="1580528412487" />
+    <state x="184" y="92" width="1536" height="858" key="DiffContextDialog/0.0.1920.1040/1920.-446.1080.1880@0.0.1920.1040" timestamp="1580947246742" />
+    <state x="740" y="276" key="FileChooserDialogImpl" timestamp="1580912249062">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="740" y="276" key="FileChooserDialogImpl/0.0.1920.1040/1920.-446.1080.1880@0.0.1920.1040" timestamp="1580912249062" />
     <state width="1899" height="261" key="GridCell.Tab.0.bottom" timestamp="1579998857797">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -242,18 +264,26 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1899" height="261" key="GridCell.Tab.0.right/0.0.1920.1040/1920.-446.1080.1880@0.0.1920.1040" timestamp="1579998857797" />
-    <state x="461" y="163" key="SettingsEditor" timestamp="1580058091882">
+    <state x="664" y="228" key="MultipleFileMergeDialog" timestamp="1580947192723">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="461" y="163" key="SettingsEditor/0.0.1920.1040/1920.-446.1080.1880@0.0.1920.1040" timestamp="1580058091882" />
-    <state x="552" y="250" key="Vcs.Push.Dialog.v2" timestamp="1580670545313">
+    <state x="664" y="228" key="MultipleFileMergeDialog/0.0.1920.1040/1920.-446.1080.1880@0.0.1920.1040" timestamp="1580947192723" />
+    <state x="461" y="163" key="SettingsEditor" timestamp="1580912041002">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="250" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.-446.1080.1880@0.0.1920.1040" timestamp="1580670545313" />
-    <state x="767" y="433" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1580528574686">
+    <state x="461" y="163" key="SettingsEditor/0.0.1920.1040/1920.-446.1080.1880@0.0.1920.1040" timestamp="1580912041002" />
+    <state x="552" y="250" key="Vcs.Push.Dialog.v2" timestamp="1580784676609">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="767" y="433" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040/1920.-446.1080.1880@0.0.1920.1040" timestamp="1580528574686" />
+    <state x="552" y="250" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.-446.1080.1880@0.0.1920.1040" timestamp="1580784676609" />
+    <state x="715" y="365" key="cloudConfig.SelfSettingsDialog" timestamp="1580911769808">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="715" y="365" key="cloudConfig.SelfSettingsDialog/0.0.1920.1040/1920.-446.1080.1880@0.0.1920.1040" timestamp="1580911769808" />
+    <state x="767" y="433" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1580947184192">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="767" y="433" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040/1920.-446.1080.1880@0.0.1920.1040" timestamp="1580947184192" />
     <state x="1920" y="-348" width="1096" height="1020" key="dock-window-1" timestamp="1580783958419">
       <screen x="1920" y="-446" width="1080" height="1880" />
     </state>
