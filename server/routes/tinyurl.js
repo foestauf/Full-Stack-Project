@@ -5,12 +5,10 @@ const mongoOptions = {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true
-}
+};
 require('dotenv').config();
 const mongoose = require('mongoose');
 mongoose.connect(process.env.MONGO_URI, mongoOptions);
-const db = mongoose.connection;
-const urlDB = require('./../components/dbhandler');
 const Schema = mongoose.Schema;
 const urlSchema = new Schema({
     fullUrl: {type: String, required: true, unqieu: true},
@@ -48,8 +46,8 @@ router.post('/new/:newUrl(*)', (req, res) => {
                     console.log(fullUrl + req.params.newURL);
                     console.log('Good news it doesn\'t exist yet');
                     let short_url = makeid(5);
-                    var createUrl = function() {
-                        var url = new Url({
+                    let createUrl = function() {
+                        let url = new Url({
                             fullUrl: fullUrl,
                             shortUrl: short_url
                         });
