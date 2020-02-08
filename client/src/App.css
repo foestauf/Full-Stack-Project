@@ -30,3 +30,21 @@
     transform: rotate(360deg);
   }
 }
+
+nav {
+  display: flex;
+  background: rgba(46, 13, 44, 0.84);
+  justify-content: space-around;
+  align-items: center;
+  min-height: 10vh;
+
+}
+
+.nav-links {
+  width: 50%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  list-style-type: none;
+  list-style-image: none;
+}
