@@ -1,36 +1,41 @@
-import React, { Component } from 'react';
-import './App.css';
+import React, {Component} from 'react';
+import './components/css/App.css';
 import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom';
-import Home  from "./home";
+import Home from "./home";
 import Nav from "./nav";
-import Api from "./api";
+import {Api, Timestamp} from "./api";
 import About from "./about";
+import styled from "@emotion/styled";
 
-class App extends Component {
-  state = {
-    data: ''
+const Wrapper = styled("div")`
+  background: ${props => props.theme.background};
+  width: 100vw;
+  height: 100vh;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen";
+  h1 {
+    color: ${props => props.theme.body};
   }
-  componentDidMount = () => {
-    /*
-     Make sure to change the (localhost) on the line bellow
-     to the public DNS of your EC2 instance
-    */
-  };
-  render() {
+`;
+
+
+const App = () => {
+
     return (
-        <Router>
-          <div className="app">
-            <Nav />
-            <Switch>
-              <Route path="/" exact component={Home} />
-              <Route path="/about" component={About} />
-              <Route path="/api" component={Api} />
-            </Switch>
-          </div>
+        <Wrapper>
+            <Router>
+                <div className="app">
+                    <Nav/>
+                    <Switch>
+                        <Route path="/" exact component={Home}/>
+                        <Route path="/about" component={About}/>
+                        <Route path="/api" exact component={Api}/>
+                        <Route path="/api/timestamp/" component={Timestamp}/>
+                    </Switch>
+                </div>
 
-    </Router>
+            </Router>
+        </Wrapper>
     );
-  }
-}
+};
 
 export default App;

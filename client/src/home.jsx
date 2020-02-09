@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import logo from './logo.svg';
-import './App.css';
-import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom';
+import './components/css/App.css';
+// import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom';
 
 class Home extends Component {
     state = {
         data: ''
-    }
+    };
     componentDidMount = () => {
         // Make sure to change the (localhost) on the line bellow
         // to the public DNS of your EC2 instance
@@ -15,6 +15,9 @@ class Home extends Component {
             .then(res => {
                 const dataFromServer = res.data;
                 this.setState({ data: dataFromServer });
+            })
+            .catch(function (error) {
+                console.log(error);
             });
     }
     render() {

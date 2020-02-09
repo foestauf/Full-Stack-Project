@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import './App.css';
+import './components/css/App.css';
 
-class Api extends Component {
+class About extends Component {
     state = {
         data: ''
     };
@@ -12,10 +12,10 @@ class Api extends Component {
     render() {
         return (
             <div>
-                Hello from API
+                Hello from About
             </div>
         );
     }
 }
 
-export default Api;
+export default About;
