@@ -3,15 +3,15 @@ const black = "#161617";
 const gray = "#F8F8F9";
 
 const themeLight = {
-    background: gray,
+    background: white,
     body: black,
-    text: black
+    color: black
 };
 
 const themeDark = {
     background: black,
     body: white,
-    text: white
+    color: white
 };
 
 const theme = mode => (mode === "dark" ? themeDark : themeLight);

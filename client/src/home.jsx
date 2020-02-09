@@ -19,7 +19,7 @@ class Home extends Component {
             .catch(function (error) {
                 console.log(error);
             });
-    }
+    };
     render() {
         return (
             <div className="Home">
